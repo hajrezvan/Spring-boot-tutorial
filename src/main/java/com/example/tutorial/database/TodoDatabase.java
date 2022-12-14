@@ -29,4 +29,18 @@ public class TodoDatabase {
     public List<TodoModel> getTodos() {
         return todos;
     }
+
+    public boolean deleteTodo(int id) {
+        TodoModel todoModel = findById(id);
+        if (todoModel == null) return false;
+        return todos.remove(todoModel);
+    }
+
+    private TodoModel findById(int id) {
+        for (TodoModel todo :
+                todos) {
+            if (todo.getId() == id) return todo;
+        }
+        return null;
+    }
 }

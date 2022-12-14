@@ -16,19 +16,11 @@ public class TodoController {
     @Autowired
     private TodoDatabase todoDatabase;
 
-    @GetMapping("/users/{username}/todos")
-    public List<TodoModel> getAllTodos(@PathVariable String username) {
+    public List<TodoModel> getAllTodos(String username) {
         return todoDatabase.getTodos();
     }
 
-    //    Delete Request
-    @DeleteMapping("/users/{username}/todos/{id}")
-    public int deleteTodo(@PathVariable String username, @PathVariable int id) {
-//        TODO if request successful, return 0 else return -1.
-        if (true) {
-            return 0;
-        } else {
-            return -1;
-        }
+    public boolean deleteTodo(String username, int id) {
+        return todoDatabase.deleteTodo(id);
     }
 }

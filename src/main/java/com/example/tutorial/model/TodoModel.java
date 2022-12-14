@@ -1,6 +1,7 @@
 package com.example.tutorial.model;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class TodoModel {
 
@@ -66,5 +67,18 @@ public class TodoModel {
 
     public void setDone(boolean done) {
         isDone = done;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        TodoModel todoModel = (TodoModel) o;
+        return id == todoModel.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }
