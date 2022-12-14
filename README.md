@@ -1,2 +1,2 @@
-# Hello-World web app
+# Spring boot tutorial
 ## Learning project for spring boot

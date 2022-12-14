@@ -5,4 +5,4 @@ GET http://localhost:8080/new-hello-world
 GET http://localhost:8080/hello-world
 
 ###
-GET http://localhost:8080/hello-world-model
+GET http://localhost:8080/hello-world-model/haj-rezvan
