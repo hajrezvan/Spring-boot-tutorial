@@ -30,10 +30,24 @@ public class TodoDatabase {
         return todos;
     }
 
+    public TodoModel getTodos(int id) {
+        return findById(id);
+    }
+
     public boolean deleteTodo(int id) {
         TodoModel todoModel = findById(id);
         if (todoModel == null) return false;
         return todos.remove(todoModel);
+    }
+
+    public boolean saveTodo(TodoModel todo) {
+        if (todo.getId() == -1) {
+            todo.setId(++idCounter);
+        } else {
+            deleteTodo(todo.getId());
+        }
+        todos.add(todo);
+        return true;
     }
 
     private TodoModel findById(int id) {

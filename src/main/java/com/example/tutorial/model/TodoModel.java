@@ -12,6 +12,10 @@ public class TodoModel {
     private Date targetDate;
     private boolean isDone;
 
+    protected TodoModel() {
+//        I don't know why we need this here.
+    }
+
     public TodoModel(int id, String title, String description, UserModel user, Date targetDate, boolean isDone) {
         this.id = id;
         this.title = title;
